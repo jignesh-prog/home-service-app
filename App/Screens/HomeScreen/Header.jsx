@@ -6,7 +6,7 @@ export default function Header() {
     <View style={styles.Container}>
         <View style={styles.ProfileMainContainer}>
         <View style={styles.ProfileContainer}>
-      <Image style={styles.Image} source={require("../../../assets/login2.jpg")}></Image>
+             <Image style={styles.Image} source={require("../../../assets/login2.jpg")}></Image>
       <View>
         <Text style={{color:"white"}}>Welcome</Text>
         <Text style={{color:"white",fontSize:20}}>Jignesh</Text>

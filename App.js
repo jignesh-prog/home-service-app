@@ -3,14 +3,23 @@ import { StyleSheet, Text, View ,SafeAreaView} from 'react-native';
 import LoginScreen from './App/Screens/LoginScreen/LoginScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './App/Navigations/TabNavigation';
-
+import { ClerkProvider,SignedIn,SignedOut } from '@clerk/clerk-expo';
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <NavigationContainer>
-        <TabNavigation></TabNavigation>
-      </NavigationContainer>
-    </SafeAreaView>
+       <ClerkProvider publishableKey='pk_test_bm90YWJsZS1rYW5nYXJvby02Ny5jbGVyay5hY2NvdW50cy5kZXYk'>
+     <SafeAreaView style={styles.container}>
+      <SignedIn>
+          <NavigationContainer>
+            <TabNavigation/>
+          </NavigationContainer>
+        </SignedIn>
+        <SignedOut>
+        <LoginScreen/>
+        </SignedOut>
+      
+      </SafeAreaView>
+      </ClerkProvider>
+   
   );
 }
 
