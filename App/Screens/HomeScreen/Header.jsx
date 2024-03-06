@@ -1,15 +1,17 @@
 import { View, Text ,Image,StyleSheet, TextInput} from 'react-native'
 import React from 'react'
 import { FontAwesome } from '@expo/vector-icons';
+import { useUser } from '@clerk/clerk-expo';
 export default function Header() {
-  return (
+    const {user,isLoading} = useUser();
+  return user && (
     <View style={styles.Container}>
         <View style={styles.ProfileMainContainer}>
         <View style={styles.ProfileContainer}>
-             <Image style={styles.Image} source={require("../../../assets/login2.jpg")}></Image>
+             <Image style={styles.Image} source={{uri:user?.imageUrl}}></Image>
       <View>
         <Text style={{color:"white"}}>Welcome</Text>
-        <Text style={{color:"white",fontSize:20}}>Jignesh</Text>
+        <Text style={{color:"white",fontSize:20}}>{user?.fullName}</Text>
       </View>
     </View>
     <FontAwesome  name="bookmark-o" size={27} color="white" />
@@ -46,6 +48,12 @@ borderBottomLeftRadius:25
         width:45,
         borderRadius:99
     },
+    SearchBarContainer:{
+        marginTop:15,
+        display:"flex",
+        flexDirection:"row",
+        gap:10
+    },
     TextInput:{
         padding:7,
         paddingHorizontal:16,
@@ -54,15 +62,9 @@ borderBottomLeftRadius:25
         width:"85%",
         fontSize:16
     },
-    SearchBarContainer:{
-        marginTop:15,
-        display:"flex",
-        flexDirection:"row",
-        gap:10
-    },
     SearchButton:{
-        backgroundColor:"white",
         padding:10,
+        backgroundColor:"white",
         borderRadius:8,
     }
 })

@@ -26,13 +26,13 @@ export default function LoginScreen() {
  
   return (
     <View style={styles.Container}>
-     <Image style={styles.Image} source={require("../../../assets/login5.jpg")}/>
+     <Image style={styles.Image} source={require("../../../assets/marketplace2.jpg")}/>
      <View style={styles.Subcontainer}>
-     <Text style={{textAlign:"center",fontSize:25,marginTop:5,color:"white"}}>Let's find 
-        <Text style={{fontWeight:"bold"}}> Professional cleaning and repair </Text>
-         Service
+     <Text style={{textAlign:"center",fontSize:25,marginTop:5,color:"white"}}>Let's sell or buy 
+        <Text style={{fontWeight:"bold"}}> a product </Text>
+         on marketplace
         </Text>
-        <Text style={{fontSize:15,color:"white",textAlign:"center",marginTop:15}}>Best app to find service near you which deliver professional cleaning</Text> 
+        <Text style={{fontSize:15,color:"white",textAlign:"center",marginTop:15}}>Best app to find service,sell or buy item near you </Text> 
      <TouchableOpacity style={styles.Button} onPress={onPress}> 
      <Text style={{textAlign:"center",fontSize:20,color:"#78488a"}}>Let's get started</Text>
     </TouchableOpacity> 
